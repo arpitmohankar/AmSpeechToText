@@ -1,0 +1,102 @@
+/* App.css */
+body {
+  background-color: #1a1a1a;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  text-align: center; /* Center the heading text */
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.textbox {
+  width: 645px;
+  height: 370px;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  resize: none;
+}
+
+textarea {
+  width: 645px;
+  height: 370px;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  resize: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 10px;
+}
+
+button {
+  background-color: #1877f2;
+  color: white;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #3b5998;
+  cursor: not-allowed;
+}
+
+.copy-btn-clicked {
+  background-color: #4caf50; /* Green color */
+}
+
+/* Add this CSS to your App.css file or your preferred styling location */
+
+.speak-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; /* Adjust the margin as needed */
+}
+
+.speak-btn {
+  padding: 10px;
+  background-color: #ff0000; /* Red color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.speak-btn:disabled {
+  background-color: #ccc; /* Gray color for disabled state */
+  cursor: not-allowed;
+}
