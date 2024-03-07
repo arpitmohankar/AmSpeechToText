@@ -47,7 +47,7 @@ export default function App() {
     const voices = synth.getVoices();
 
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.voice = voices.find((voice) => voice.name === 'Google UK English Female'); // Adjust the voice as needed
+    utterance.voice = voices.find((voice) => voice.name === 'Google UK English Female'); // voice adjust provided by google
 
     synth.speak(utterance);
   };
