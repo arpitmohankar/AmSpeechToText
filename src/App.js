@@ -24,11 +24,21 @@ export default function App() {
     };
   }, [recognition]);
 
+  const speakText = useCallback((text) => {
+    const synth = window.speechSynthesis;
+    const voices = synth.getVoices();
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.voice = voices.find((voice) => voice.name === 'Google UK English Female');
+
+    synth.speak(utterance);
+  }, []);
+
   useEffect(() => {
     if (transcript && copyButtonClicked) {
       speakText(transcript);
     }
-  }, [transcript, copyButtonClicked]);
+  }, [transcript, copyButtonClicked, speakText]);
 
   const startListening = useCallback(() => {
     recognition.start();
@@ -39,16 +49,6 @@ export default function App() {
     recognition.stop();
     setListening(false);
   }, [recognition]);
-
-  const speakText = useCallback((text) => {
-    const synth = window.speechSynthesis;
-    const voices = synth.getVoices();
-
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.voice = voices.find((voice) => voice.name === 'Google UK English Female');
-
-    synth.speak(utterance);
-  }, []);
 
   const handleCopyToClipboard = useCallback(() => {
     navigator.clipboard.writeText(transcript);
