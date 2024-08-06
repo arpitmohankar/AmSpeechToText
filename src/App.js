@@ -3,7 +3,7 @@ import { useSpeechRecognition } from 'react-speech-recognition';
 import './App.css';
 
 export default function App() {
-  const useSpeechRecognition = () => {
+  const useCustomSpeechRecognition = () => {
     const [transcript, setTranscript] = useState('');
     const [listening, setListening] = useState(false);
     const [copyButtonClicked, setCopyButtonClicked] = useState(false);
@@ -24,7 +24,7 @@ export default function App() {
       return () => {
         recognition.stop();
       };
-    }, []);
+    }, [recognition]);
 
     useEffect(() => {
       if (transcript && copyButtonClicked) {
@@ -42,7 +42,7 @@ export default function App() {
       setListening(false);
     };
 
-    
+
     const speakText = (text) => {
     const synth = window.speechSynthesis;
     const voices = synth.getVoices();
@@ -67,7 +67,7 @@ export default function App() {
     return { transcript, listening, startListening, stopListening, handleCopyToClipboard, copyButtonClicked, setTranscript, speakText};
   };
   
-    const { transcript, listening, startListening, stopListening, handleCopyToClipboard, copyButtonClicked, setTranscript, speakText} = useSpeechRecognition();
+    const { transcript, listening, startListening, stopListening, handleCopyToClipboard, copyButtonClicked, setTranscript, speakText} = useCustomSpeechRecognition();
   
     return (
       <div className="App">
