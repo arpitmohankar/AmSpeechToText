@@ -42,6 +42,7 @@ export default function App() {
       setListening(false);
     };
 
+    
     const speakText = (text) => {
     const synth = window.speechSynthesis;
     const voices = synth.getVoices();
